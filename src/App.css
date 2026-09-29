@@ -1,0 +1,1021 @@
+/* =========================================================
+   OCEAN EMBED
+   Main Application Styles
+========================================================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 72% 42%,
+      rgba(0, 130, 170, 0.12),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(0, 80, 110, 0.12),
+      transparent 30%
+    ),
+    #020a10;
+
+  color: #f3fbff;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  width: 100%;
+  height: 92px;
+
+  padding: 0 clamp(28px, 6vw, 100px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 20;
+}
+
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.brand-icon {
+  width: 38px;
+  height: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+
+.brand-icon span {
+  display: block;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #e8faff;
+
+  box-shadow:
+    0 0 8px rgba(86, 221, 255, 0.5);
+}
+
+
+.brand-icon span:nth-child(1) {
+  width: 30px;
+}
+
+
+.brand-icon span:nth-child(2) {
+  width: 24px;
+  margin-left: 3px;
+}
+
+
+.brand-icon span:nth-child(3) {
+  width: 18px;
+  margin-left: 6px;
+}
+
+
+.brand-text {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 20px;
+
+  letter-spacing: 0.18em;
+
+  color: #eaf8fc;
+}
+
+
+.brand-text strong {
+  font-weight: 700;
+}
+
+
+/* Navigation */
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(28px, 4vw, 65px);
+}
+
+
+.nav-links a {
+  color: #94aeb9;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  letter-spacing: 0.03em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.nav-links a:hover {
+  color: #62ddff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: calc(100vh - 92px);
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(480px, 0.9fr)
+    minmax(540px, 1.1fr);
+
+  align-items: center;
+
+  padding:
+    20px
+    clamp(30px, 6vw, 100px)
+    60px;
+
+  overflow: hidden;
+}
+
+
+/* Subtle grid */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.12;
+
+  background-image:
+    linear-gradient(
+      rgba(90, 200, 225, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(90, 200, 225, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 720px;
+
+  padding-bottom: 20px;
+}
+
+
+/* Eyebrow */
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 38px;
+
+  color: #7897a3;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+
+  letter-spacing: 0.23em;
+
+  white-space: nowrap;
+}
+
+
+.eyebrow-line {
+  width: 55px;
+
+  height: 1px;
+
+  background: #43d9ff;
+
+  box-shadow:
+    0 0 12px rgba(67, 217, 255, 0.7);
+}
+
+
+.eyebrow .dot {
+  color: #28d8ff;
+
+  font-size: 15px;
+}
+
+
+/* Main Heading */
+
+.hero h1 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-weight: 300;
+
+  font-size: clamp(
+    58px,
+    5.8vw,
+    96px
+  );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  color: #edf9fd;
+}
+
+
+.hero h1 strong {
+  font-weight: 700;
+}
+
+
+.cyan-text {
+  color: #4fdcff;
+
+  text-shadow:
+    0 0 25px rgba(57, 214, 255, 0.18);
+}
+
+
+/* Description */
+
+.hero-description {
+  max-width: 590px;
+
+  margin-top: 38px;
+
+  margin-bottom: 40px;
+
+  color: #8ea9b5;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   PREDICT BUTTON
+========================================================= */
+
+.predict-button {
+  position: relative;
+
+  width: 265px;
+
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 24px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 65, 82, 0.25),
+      rgba(5, 28, 38, 0.3)
+    );
+
+  border: 1px solid rgba(67, 211, 244, 0.6);
+
+  color: #e8faff;
+
+  cursor: pointer;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 14px;
+
+  letter-spacing: 0.14em;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.predict-button:hover {
+  transform: translateY(-3px);
+
+  border-color: #5ce5ff;
+
+  background:
+    rgba(26, 105, 128, 0.22);
+
+  box-shadow:
+    0 12px 45px rgba(0, 190, 240, 0.12);
+}
+
+
+.predict-button .arrow {
+  font-size: 24px;
+
+  color: #55ddff;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.predict-button:hover .arrow {
+  transform:
+    translate(4px, -4px);
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.hero-stats {
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 48px;
+}
+
+
+.stat {
+  min-width: 150px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 12px 14px;
+
+  border-left: 1px solid
+    rgba(72, 191, 221, 0.2);
+}
+
+
+.stat-icon {
+  width: 28px;
+
+  height: 28px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #42d9ff;
+
+  border: 1px solid
+    rgba(67, 217, 255, 0.25);
+
+  font-size: 11px;
+}
+
+
+.stat small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #53727d;
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+}
+
+
+.stat strong {
+  display: block;
+
+  color: #9bb4bd;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   EARTH AREA
+========================================================= */
+
+.earth-area {
+  position: relative;
+
+  width: 100%;
+
+  height: min(
+    700px,
+    calc(100vh - 120px)
+  );
+
+  min-height: 560px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 2;
+}
+
+
+/* Canvas wrapper */
+
+.earth-canvas {
+  position: relative;
+
+  width: min(
+    680px,
+    48vw
+  );
+
+  aspect-ratio: 1 / 1;
+
+  flex-shrink: 0;
+
+  display: block;
+}
+
+
+/* Actual canvas */
+
+.earth-canvas canvas {
+  width: 100% !important;
+
+  height: 100% !important;
+
+  display: block;
+}
+
+
+/* Soft glow behind Earth */
+
+.earth-area::before {
+  content: "";
+
+  position: absolute;
+
+  width: 65%;
+
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(31, 181, 225, 0.18),
+      rgba(4, 44, 61, 0.05) 55%,
+      transparent 72%
+    );
+
+  filter: blur(20px);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+.earth-status {
+  position: absolute;
+
+  bottom: 7%;
+
+  right: 5%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #587782;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.16em;
+
+  white-space: nowrap;
+}
+
+
+.earth-status span {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #20d9a1;
+
+  box-shadow:
+    0 0 12px rgba(32, 217, 161, 0.8);
+
+  animation: pulse 2s infinite;
+}
+
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+
+    transform: scale(0.7);
+  }
+}
+
+
+/* =========================================================
+   PREDICTION SECTION
+========================================================= */
+
+.predict-section {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  padding:
+    120px
+    clamp(30px, 7vw, 110px);
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 137, 179, 0.12),
+      transparent 30%
+    ),
+    #031119;
+
+  border-top: 1px solid
+    rgba(81, 190, 219, 0.1);
+
+  /*
+     IMPORTANT:
+     Section remains visible while scrolling.
+     It is NOT hidden anymore.
+  */
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* Keep this class harmless */
+
+.predict-section.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+.section-heading {
+  max-width: 750px;
+}
+
+
+.section-heading > span {
+  color: #4bdcff;
+
+  font-size: 11px;
+
+  letter-spacing: 0.2em;
+}
+
+
+.section-heading h2 {
+  margin:
+    18px
+    0
+    20px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(
+    48px,
+    6vw,
+    82px
+  );
+
+  line-height: 1;
+
+  letter-spacing: -0.05em;
+}
+
+
+.section-heading p {
+  color: #88a7b3;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PREDICTION UI
+========================================================= */
+
+.prediction-placeholder {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    0.6fr;
+
+  gap: 30px;
+
+  margin-top: 70px;
+
+  min-height: 520px;
+}
+
+
+.map-placeholder {
+  min-height: 500px;
+
+  display: grid;
+
+  place-items: center;
+
+  border: 1px solid
+    rgba(70, 207, 239, 0.18);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(17, 130, 163, 0.16),
+      rgba(2, 15, 22, 0.85)
+    );
+
+  color: #456c78;
+
+  letter-spacing: 0.25em;
+
+  font-family: "Space Grotesk", sans-serif;
+}
+
+
+.prediction-controls {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+
+  padding: 35px;
+
+  border: 1px solid
+    rgba(70, 207, 239, 0.15);
+
+  background:
+    rgba(5, 24, 33, 0.75);
+}
+
+
+.prediction-controls label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+
+  color: #648692;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+}
+
+
+.prediction-controls input {
+  height: 50px;
+
+  padding: 0 14px;
+
+  background: #071923;
+
+  border: 1px solid
+    rgba(71, 188, 219, 0.2);
+
+  color: white;
+
+  outline: none;
+
+  font-family: "DM Sans", sans-serif;
+}
+
+
+.prediction-controls input:focus {
+  border-color: #38d5fa;
+}
+
+
+.secondary-predict {
+  margin-top: 15px;
+
+  height: 56px;
+
+  background: #0b6078;
+
+  border: 1px solid #42dfff;
+
+  color: white;
+
+  cursor: pointer;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.secondary-predict:hover {
+  background: #0d7895;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .hero {
+    grid-template-columns:
+      minmax(420px, 0.95fr)
+      minmax(470px, 1.05fr);
+
+    padding-left: 5vw;
+
+    padding-right: 5vw;
+  }
+
+
+  .hero h1 {
+    font-size: clamp(
+      54px,
+      5.5vw,
+      78px
+    );
+  }
+
+
+  .earth-canvas {
+    width: min(
+      580px,
+      46vw
+    );
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding:
+      0 25px;
+  }
+
+
+  .nav-links {
+    gap: 20px;
+  }
+
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    padding:
+      50px
+      25px
+      80px;
+  }
+
+
+  .hero-content {
+    max-width: 700px;
+  }
+
+
+  .earth-area {
+    height: 600px;
+
+    min-height: 500px;
+
+    margin-top: 20px;
+  }
+
+
+  .earth-canvas {
+    width: min(
+      620px,
+      85vw
+    );
+  }
+
+
+  .earth-status {
+    right: 10%;
+
+    bottom: 5%;
+  }
+
+
+  .prediction-placeholder {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .navbar {
+    height: 75px;
+  }
+
+
+  .brand-text {
+    font-size: 15px;
+  }
+
+
+  .nav-links {
+    display: none;
+  }
+
+
+  .hero {
+    padding-top: 35px;
+  }
+
+
+  .eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 0.14em;
+
+    margin-bottom: 25px;
+  }
+
+
+  .eyebrow-line {
+    width: 35px;
+  }
+
+
+  .hero h1 {
+    font-size: 52px;
+
+    line-height: 0.98;
+  }
+
+
+  .hero-description {
+    font-size: 14px;
+
+    margin-top: 28px;
+  }
+
+
+  .predict-button {
+    width: 220px;
+
+    height: 60px;
+  }
+
+
+  .hero-stats {
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 35px;
+  }
+
+
+  .stat {
+    width: fit-content;
+  }
+
+
+  .earth-area {
+    height: 430px;
+
+    min-height: 430px;
+  }
+
+
+  .earth-canvas {
+    width: 95vw;
+  }
+
+
+  .earth-status {
+    bottom: 0;
+
+    right: 50%;
+
+    transform: translateX(50%);
+
+    font-size: 8px;
+  }
+
+}

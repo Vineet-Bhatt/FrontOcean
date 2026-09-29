@@ -1,0 +1,1053 @@
+.map-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px clamp(18px, 5vw, 80px) 90px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(0, 180, 220, 0.10),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(0, 150, 180, 0.10),
+      transparent 35%
+    ),
+    #03151c;
+}
+
+.map-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+}
+
+.map-glow-one {
+  width: 400px;
+  height: 400px;
+  left: -200px;
+  top: 150px;
+  background: rgba(0, 190, 220, 0.08);
+}
+
+.map-glow-two {
+  width: 400px;
+  height: 400px;
+  right: -200px;
+  bottom: 100px;
+  background: rgba(0, 130, 180, 0.08);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.map-heading {
+  position: relative;
+  z-index: 10;
+
+  max-width: 820px;
+  margin: 0 auto 45px;
+
+  text-align: center;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+  margin-bottom: 20px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: #75d8e8;
+}
+
+.eyebrow-line {
+  width: 35px;
+  height: 1px;
+
+  background: #52d3e7;
+
+  box-shadow:
+    0 0 12px rgba(82, 211, 231, 0.7);
+}
+
+.eyebrow-dot {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #65dbea;
+
+  box-shadow:
+    0 0 10px rgba(101, 219, 234, 0.9);
+}
+
+.map-heading h2 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(
+    38px,
+    5vw,
+    66px
+  );
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  font-weight: 500;
+
+  color: #f4fbff;
+}
+
+.map-heading h2 span {
+  color: #4bd4e8;
+}
+
+.map-heading p {
+  max-width: 650px;
+
+  margin: 22px auto 0;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+
+  color: rgba(220, 240, 244, 0.68);
+}
+
+
+/* =========================================================
+   MAP LAYOUT
+========================================================= */
+
+.map-layout {
+  position: relative;
+
+  z-index: 10;
+
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.7fr)
+    minmax(320px, 0.7fr);
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   MAP CARD
+========================================================= */
+
+.map-card {
+  position: relative;
+
+  width: 100%;
+
+  height: 600px;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(101, 204, 221, 0.45);
+
+  background: #12677a;
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   TOP MAP INFORMATION
+========================================================= */
+
+.map-topbar {
+  position: absolute;
+
+  z-index: 1000;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  /*
+    Only the overlay is styled.
+    MAP TILE COLOURS ARE NOT CHANGED.
+  */
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3, 20, 25, 0.78),
+      rgba(3, 20, 25, 0.28),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+.map-live {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  color: #f3fdff;
+
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.85),
+    0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #57e0b1;
+
+  box-shadow:
+    0 0 0 4px rgba(87, 224, 177, 0.14),
+    0 0 14px rgba(87, 224, 177, 0.95);
+}
+
+.map-meta {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color: #e8faff;
+
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.meta-divider {
+  width: 1px;
+  height: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   MAP ITSELF
+   DO NOT CHANGE COLOURS
+========================================================= */
+
+.ocean-map {
+  position: absolute !important;
+
+  inset: 0;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  z-index: 1;
+
+  background: #075a73;
+}
+
+/*
+  VERY IMPORTANT:
+
+  No filter.
+  No brightness.
+  No hue rotation.
+  No saturation.
+  No colour overlay.
+
+  Original map colours stay exactly as provided
+  by the map tiles.
+*/
+
+.ocean-map .leaflet-tile {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   ZOOM BUTTON
+========================================================= */
+
+.ocean-map .leaflet-control-zoom {
+  margin-top: 76px !important;
+  margin-left: 12px !important;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.42) !important;
+
+  border-radius: 10px !important;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.38);
+}
+
+.ocean-map .leaflet-control-zoom a {
+  width: 40px !important;
+  height: 40px !important;
+
+  line-height: 40px !important;
+
+  background:
+    rgba(4, 36, 43, 0.88) !important;
+
+  color: #e9fbff !important;
+
+  border: none !important;
+
+  font-size: 20px !important;
+
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.8);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.ocean-map .leaflet-control-zoom a:hover {
+  background:
+    rgba(9, 74, 87, 0.94) !important;
+
+  color: #74e5f5 !important;
+}
+
+
+/* =========================================================
+   MAP ATTRIBUTION
+========================================================= */
+
+.ocean-map
+.leaflet-control-attribution {
+  background:
+    rgba(3, 23, 29, 0.78) !important;
+
+  color:
+    rgba(231, 249, 252, 0.78) !important;
+
+  font-size: 8px !important;
+
+  border-radius: 5px 0 0 0;
+
+  padding: 4px 7px !important;
+}
+
+.ocean-map
+.leaflet-control-attribution a {
+  color: #83dce9 !important;
+
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   SELECTED LOCATION BAR
+========================================================= */
+
+.map-bottom {
+  position: absolute;
+
+  z-index: 1000;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  min-height: 90px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  padding: 18px 22px;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(3, 22, 28, 0.94),
+      rgba(3, 22, 28, 0.62),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+.map-coordinate {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.map-coordinate span {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+
+  color:
+    rgba(230, 248, 251, 0.72);
+
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.map-coordinate strong {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.95);
+}
+
+.coordinate-gap {
+  display: inline-block;
+
+  width: 14px;
+}
+
+.map-hint {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.3px;
+
+  color:
+    rgba(225, 247, 250, 0.72);
+
+  text-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =========================================================
+   OCEAN LOCATION MARKER
+========================================================= */
+
+.ocean-marker-wrapper {
+  background: transparent !important;
+
+  border: none !important;
+}
+
+.ocean-marker {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.marker-core {
+  position: relative;
+
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background: #62e5f7;
+
+  border:
+    2px solid #ffffff;
+
+  z-index: 4;
+
+  box-shadow:
+    0 0 10px rgba(98, 229, 247, 1),
+    0 0 25px rgba(98, 229, 247, 0.95);
+}
+
+.marker-pulse {
+  position: absolute;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(98, 229, 247, 0.9);
+
+  animation:
+    markerPulse 2s infinite;
+}
+
+@keyframes markerPulse {
+
+  0% {
+    transform: scale(0.3);
+    opacity: 0.9;
+  }
+
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.marker-cross {
+  position: absolute;
+
+  background:
+    rgba(255, 255, 255, 0.9);
+
+  z-index: 3;
+
+  box-shadow:
+    0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.marker-cross.horizontal {
+  width: 36px;
+  height: 1px;
+}
+
+.marker-cross.vertical {
+  width: 1px;
+  height: 36px;
+}
+
+
+/* =========================================================
+   RIGHT OBSERVATION PANEL
+========================================================= */
+
+.observation-panel {
+  min-width: 0;
+
+  min-height: 600px;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(81, 192, 218, 0.20);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(7, 37, 46, 0.97),
+      rgba(3, 19, 25, 0.98)
+    );
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.25);
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 34px;
+}
+
+.panel-icon {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(65, 207, 235, 0.25);
+
+  background:
+    rgba(23, 153, 181, 0.09);
+
+  color: #56d9f3;
+
+  font-size: 18px;
+}
+
+.panel-header span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 1.8px;
+
+  color:
+    rgba(104, 211, 235, 0.65);
+}
+
+.panel-header h3 {
+  margin: 0;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  color: #e9faff;
+}
+
+.input-group {
+  margin-bottom: 21px;
+}
+
+.input-group label {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color:
+    rgba(214, 238, 244, 0.72);
+}
+
+.input-group label span {
+  font-size: 7px;
+
+  color:
+    rgba(158, 203, 214, 0.38);
+}
+
+.coordinate-input {
+  position: relative;
+}
+
+.coordinate-input input,
+.date-input input {
+  width: 100%;
+  height: 49px;
+
+  padding:
+    0 40px 0 15px;
+
+  outline: none;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(90, 182, 204, 0.18);
+
+  background:
+    rgba(2, 14, 20, 0.78);
+
+  color: #e0f9ff;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 13px;
+
+  transition: 0.25s ease;
+}
+
+.coordinate-input input:focus,
+.date-input input:focus {
+  border-color:
+    rgba(62, 211, 239, 0.62);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(38, 195, 225, 0.06);
+}
+
+.coordinate-input > span {
+  position: absolute;
+
+  right: 15px;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color:
+    rgba(100, 214, 237, 0.65);
+}
+
+.date-input input {
+  padding-right: 12px;
+
+  color-scheme: dark;
+}
+
+.selected-location {
+  margin-top: 2px;
+
+  padding: 17px;
+
+  border-radius: 12px;
+
+  border:
+    1px solid
+    rgba(75, 200, 226, 0.14);
+
+  background:
+    rgba(12, 93, 111, 0.08);
+}
+
+.location-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color:
+    rgba(105, 221, 198, 0.75);
+}
+
+.location-status span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #45d9ac;
+
+  box-shadow:
+    0 0 10px
+    rgba(69, 217, 172, 0.8);
+}
+
+.location-values {
+  display: flex;
+
+  align-items: center;
+}
+
+.location-values > div:not(.location-separator) {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.location-values small {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 1.2px;
+
+  color:
+    rgba(180, 218, 227, 0.40);
+}
+
+.location-values strong {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  color: #e0faff;
+}
+
+.location-separator {
+  width: 1px;
+  height: 28px;
+
+  margin: 0 14px;
+
+  background:
+    rgba(110, 192, 207, 0.15);
+}
+
+.run-prediction {
+  width: 100%;
+  height: 55px;
+
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  border:
+    1px solid
+    rgba(68, 215, 241, 0.38);
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(19, 153, 183, 0.35),
+      rgba(12, 91, 116, 0.18)
+    );
+
+  color: #e7fbff;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  transition: 0.25s ease;
+}
+
+.run-prediction span {
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.7px;
+}
+
+.run-prediction strong {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background:
+    rgba(58, 209, 236, 0.12);
+
+  color: #52ddf5;
+
+  font-size: 17px;
+}
+
+.run-prediction:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(69, 222, 246, 0.75);
+
+  box-shadow:
+    0 12px 30px
+    rgba(20, 177, 212, 0.12);
+}
+
+.prediction-note {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 13px;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 0.8px;
+
+  color:
+    rgba(170, 210, 220, 0.40);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map-card {
+    height: 600px;
+  }
+
+  .observation-panel {
+    min-height: 560px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .map-section {
+    padding: 70px 14px 60px;
+  }
+
+  .map-heading h2 {
+    font-size: 39px;
+  }
+
+  .map-card {
+    height: 500px;
+    border-radius: 16px;
+  }
+
+  .map-meta {
+    display: none;
+  }
+
+  .observation-panel {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .map-hint {
+    display: none;
+  }
+
+}
