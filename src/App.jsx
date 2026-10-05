@@ -172,7 +172,7 @@ function App() {
 
       <OceanPrediction predictionInput={predictionInput} />
 
-      <ValidationSection predictionInput={predictionInput} />
+      <div id="validation"><ValidationSection predictionInput={predictionInput} /></div>
     </main>
   );
 }
